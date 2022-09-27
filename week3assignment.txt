@@ -1,0 +1,254 @@
+import java.util.Scanner;
+
+public class week3 {
+
+  public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    
+    //3, 9, 23, 64, 2, 8, 28, 93
+    
+  
+    
+    int[] ages = new int[9];
+    ages[0] = 3;
+    ages[1] = 9;
+    ages[2] = 23;
+    ages[3] = 64;
+    ages[4] = 2;
+    ages[5] = 8;
+    ages[6] = 28;
+    ages[7] = 12;
+    ages[8] = 93;
+    
+       int lastNumber = ages[ages.length-1];
+       int total = lastNumber - ages[0];
+      System.out.println(total);
+    
+      
+      int ageNumber = 0;
+      for(int i=0; i<ages.length; i++) {
+        ageNumber += ages[i];
+      }
+      int averageAge = ageNumber/ages.length;
+      System.out.println(averageAge);
+      
+      
+      
+      
+      String[] names = new String[6];
+      names[0] = "Sam";
+      names[1] = "Tommy";
+      names[2] = "Tim";
+      names[3] = "Sally";
+      names[4] = "Buck";
+      names[5] = "Bob";
+      
+           
+      
+      int averageChar = 0;
+      for(String name : names) {
+          averageChar += name.length();
+      }
+    System.out.println(averageChar/6);
+    
+    String allNames = String.join(" ", names);
+    System.out.println(allNames);
+    
+    
+    // How do you access the last element of any array? 
+    // Answer: 
+    //int lastNum = arrayName[arrayName.length - 1];
+    
+    //How do you access the first element of any array? 
+    //int firstNum = arrayName[0];
+    
+    
+    //Create a new array of int called nameLengths. 
+    //Write a loop to iterate over the previously created names array 
+    //and add the length of each name to the nameLengths array. 
+    
+    int[] nameLengths = new int[6];
+    int sum = names.length;
+    for (int i =0; i<0; i++) {
+      sum= sum + i;
+    }
+    
+    System.out.println(sum);
+    //  System.out.println(Arrays.toString(names));
+    
+    
+    ///////////////////////////
+    
+    
+    // Using myMethod method
+    System.out.println(myMethod("Hello", 3));
+    
+    
+    // Using fullName method
+    String firstName = "Andres";
+    String lastName = "Mejia";
+    String firstAndLastName = fullName(firstName, lastName);
+    System.out.println(firstAndLastName);
+
+    
+    
+    
+    
+    int[] newArray = new int[5];
+    newArray[0] = 112;
+    newArray[1] = 4;
+    newArray[2] = 6;
+    newArray[3] = 8;
+    newArray[4] = 10;
+    
+    System.out.println(booleanArray(newArray));
+    
+    
+    
+    
+    
+    
+    
+    double[] newDoubleArray = new double[3];
+    newDoubleArray[0] = 22.32;
+    newDoubleArray[1] = 32.56;
+    newDoubleArray[2] = 18.21;
+    
+    System.out.println(doubleAverage(newDoubleArray));
+    
+    
+    
+    double[] array1 = new double[2];
+    array1[0]= 3;
+    array1[1] = 2;
+    
+    double[] array2 = new double[2];
+    array2[0] = 1;
+    array2[1] = 2;
+    
+    System.out.println(averageBooleanDouble(array1, array2));
+    
+    
+    
+double moneyInPocket = 14.2;
+boolean isHotOutside = false;
+System.out.println(willBuyDrink(isHotOutside, moneyInPocket));
+    
+    
+
+//activates scanner input to use dollartopeso method
+System.out.println(dollarToPeso()) ;
+
+
+    
+  }
+
+  // Currency converter from dollars to Pesos depending on input
+  public static double dollarToPeso() {
+    double dollarToPeso = 20.35;
+    System.out.print("US Dollars:");
+    Scanner scanner = new Scanner(System.in);
+     double usDollar = scanner.nextDouble();
+    double amount = usDollar * dollarToPeso;
+   
+    
+    return(amount);
+    
+  }
+  
+  
+  
+  
+  
+  
+
+public static String myMethod(String str, int num) {
+  
+  String result = "";
+  for (int i=0; i<num; i++) {
+    result += str;
+  }
+  return result;
+  
+}
+
+//Full Name Method
+public static String fullName(String first, String last) {
+  
+  String name = first + " " + last;
+  return name;
+}
+
+public static boolean booleanArray(int[] sum) {
+  int total=0;
+  for(int number: sum ) {
+    total += number;
+    if(total <100) {
+      return false;
+    }
+  }
+  return true;
+  
+
+}
+
+
+public static double doubleAverage(double[] average) {
+  double sum = 0;
+  for (double value: average) {
+    sum +=value;
+  }
+    double avg = sum / average.length;
+ 
+  return avg;
+  
+}
+
+public static boolean averageBooleanDouble(double[] array1, double[] array2) {
+
+  double total1=0;
+  for(double number1: array1 ) {
+    total1 += number1;
+    double avg1 =total1/array1.length;
+  double total2=0;
+   for(double number2: array2) {
+     total2+= number2;
+     double avg2 = total2/array2.length;
+   
+    if(avg1 > avg2) {
+      return true;
+    }
+  }
+  }
+  return false;
+  
+}
+
+
+public static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
+  
+    if (moneyInPocket >10.50 && isHotOutside == true) {
+      return true;
+    }
+    else {
+      return false;
+    }
+ 
+  }
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
